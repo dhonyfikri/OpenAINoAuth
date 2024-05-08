@@ -1,0 +1,24 @@
+{
+  "name": "openainoauth",
+  "version": "1.0.0",
+  "description": "no auth open ai relay",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node dist/index.js",
+    "watch": "tsc-watch --onSuccess \"node dist/index.js\"",
+    "build": "tsc"
+  },
+  "author": "onedhonyreff",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.8",
+    "body-parser": "^1.20.2",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
