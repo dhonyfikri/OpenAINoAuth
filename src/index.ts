@@ -2,7 +2,7 @@ import express, { Request, Response, NextFunction } from "express";
 import axios, { AxiosInstance } from "axios";
 import https from "https";
 import bodyParser from "body-parser";
-import { randomUUID } from "crypto";
+import { v4 as uuidv4 } from "uuid";
 
 type Session = {
     deviceId: string;
@@ -54,7 +54,7 @@ const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 async function handleNewSession(req: Request, res: Response) {
     try {
-        const newDeviceId = randomUUID();
+        const newDeviceId = uuidv4();
         const response = await getAxiosInstance(newDeviceId).post(
             "https://chat.openai.com/backend-anon/sentinel/chat-requirements",
             {}
